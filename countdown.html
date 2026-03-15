@@ -31,10 +31,10 @@ function updateTimer() {
   var now = new Date().getTime();
   var distance = targetDate - now;
 
-  if (distance <= 0) {
+ if (distance <= 0) {
     clearInterval(timerInterval);
-    // Countdown reached zero → change this to redirect or show a message
-    document.getElementById("timer").innerHTML = "TRANSMISSION UNLOCKED";
+    window.location.href = "coordinates.html";
+}
     // Example redirect: uncomment next line to go to next puzzle page
     // window.location.href = "room101.html";
     return;
@@ -56,10 +56,7 @@ function updateTimer() {
 // Update every second
 var timerInterval = setInterval(updateTimer, 1000);
 updateTimer(); // Run immediately on page load
-  if (distance <= 0) {
-    clearInterval(timerInterval);
-    document.getElementById("timer").innerHTML = "TRANSMISSION UNLOCKED";
-}
+  
 </script>
 
 </body>
