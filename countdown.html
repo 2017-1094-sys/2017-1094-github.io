@@ -56,6 +56,10 @@ function updateTimer() {
 // Update every second
 var timerInterval = setInterval(updateTimer, 1000);
 updateTimer(); // Run immediately on page load
+  if (distance <= 0) {
+    clearInterval(timerInterval);
+    document.getElementById("timer").innerHTML = "TRANSMISSION UNLOCKED";
+}
 </script>
 
 </body>
