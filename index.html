@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Secure Terminal</title>
+
+<style>
+body{
+background:black;
+color:#00ff00;
+font-family:monospace;
+text-align:center;
+padding-top:120px;
+}
+
+input{
+background:black;
+color:#00ff00;
+border:1px solid #00ff00;
+padding:10px;
+}
+
+button{
+background:black;
+color:#00ff00;
+border:1px solid #00ff00;
+padding:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>SECURE ACCESS TERMINAL</h1>
+<p>ENTER AUTHORIZATION CODE</p>
+
+<input id="code">
+<button onclick="checkCode()">Submit</button>
+
+<p id="message"></p>
+
+<script>
+
+function checkCode(){
+
+var code=document.getElementById("code").value;
+
+if(code==="17816400"){
+window.location.href="countdown.html";
+}
+
+else{
+document.getElementById("message").innerHTML="ACCESS DENIED";
+}
+
+}
+
+</script>
+
+</body>
+</html>
