@@ -24,31 +24,31 @@
 
 <script>
 <script>
-// === SET THE TARGET DATE ===
-var targetDate = new Date(new Date().getTime() + 600000).getTime();
+<script>
+
+// Target date
+var targetDate = new Date(2026, 2, 21, 13, 0, 0).getTime();
 
 function updateTimer() {
 
   var now = new Date().getTime();
   var distance = targetDate - now;
 
+  // If countdown finished
   if (distance <= 0) {
     clearInterval(timerInterval);
     window.location.href = "coordinates.html";
     return;
   }
 
-  // Calculate time components
-  var days = Math.floor(distance / (1000*60*60*24));
-  var hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-  var minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-  var seconds = Math.floor((distance % (1000*60)) / 1000);
+  // Time calculations
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display countdown
-  var display = "";
-  if(days > 0) display += days + "d ";
-  display += hours + "h " + minutes + "m " + seconds + "s";
-
+  // Show countdown
+  var display = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
   document.getElementById("timer").innerHTML = display;
 }
 
@@ -56,7 +56,6 @@ function updateTimer() {
 var timerInterval = setInterval(updateTimer, 1000);
 updateTimer();
 
-</script>
 </script>
 
 </body>
