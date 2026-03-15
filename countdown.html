@@ -23,20 +23,18 @@
 <div id="timer"></div>
 
 <script>
+<script>
 // === SET THE TARGET DATE ===
-// Year, Month (0 = Jan), Day, Hour (24h), Minute, Second
-var targetDate = new Date(2026, 2, 21, 13, 0, 0).getTime(); // March 21, 2026 1:00 PM
+var targetDate = new Date(2026, 2, 21, 13, 0, 0).getTime();
 
 function updateTimer() {
+
   var now = new Date().getTime();
   var distance = targetDate - now;
 
- if (distance <= 0) {
+  if (distance <= 0) {
     clearInterval(timerInterval);
     window.location.href = "coordinates.html";
-}
-    // Example redirect: uncomment next line to go to next puzzle page
-    // window.location.href = "room101.html";
     return;
   }
 
@@ -50,12 +48,15 @@ function updateTimer() {
   var display = "";
   if(days > 0) display += days + "d ";
   display += hours + "h " + minutes + "m " + seconds + "s";
+
   document.getElementById("timer").innerHTML = display;
 }
 
 // Update every second
 var timerInterval = setInterval(updateTimer, 1000);
-updateTimer(); // Run immediately on page load
+updateTimer();
+
+</script>
 </script>
 
 </body>
